@@ -24,9 +24,16 @@ namespace SeachOpgaveClassLibrary
             //
 
             // programmer metoden, idet du her skal bruge sekventiel / linær søgning 
+            if (IntList == null)
+                return -1;
 
-            return -2; //  throw new NotImplementedException();
+            for (int i = 0; i < IntList.Count; i++)
+            {
+                if (IntList[i] == seachValue)
+                    return i;
+            }
 
+            return -1;
         }
         public int FindPositionInList_Sorted_Sequential(int seachValue)
         {
