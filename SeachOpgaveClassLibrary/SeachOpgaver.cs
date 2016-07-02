@@ -24,6 +24,7 @@ namespace SeachOpgaveClassLibrary
             //
 
             // programmer metoden, idet du her skal bruge sekventiel / linær søgning 
+
             if (IntList == null)
                 return -1;
 
@@ -48,8 +49,19 @@ namespace SeachOpgaveClassLibrary
             // programmer metoden, idet du her skal bruge sekventiel / linær søgning 
             // optimer så du tager hensyn til listen er sorteret - du kan stoppe når listens værdier bliver større end det du søger efter
 
-            return -2; //  throw new NotImplementedException();
+            if (IntList == null)
+                return -1;
 
+            for (int i = 0; i < IntList.Count; i++)
+            {
+                if (IntList[i] > seachValue)
+                    return -1;
+
+                if (IntList[i] == seachValue)
+                    return i;
+            }
+
+            return -1;
         }
 
         public int FindPositionInList_Sorted_Binary(int seachValue)
