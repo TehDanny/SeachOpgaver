@@ -1,0 +1,14 @@
+Denne solution indeholder opgaver, hvor du skal programmere nogle metoder til søgning i en liste af int.
+
+Der er lavet skabeloner for metoderne og opgavebeskrivelsen findes inde i hver af disse.
+
+Der er lavet unit test, der tester metoderne
+ - du kan således afvikle disse og se om din programmering giver det rigtige resultat.
+ - testene kan dog ikke afgøre om din algoritme er korrekt eller du "snyder".
+
+ Du finder opgaverne / metoderne i projekt SeachOpgaveClassLibrary, klassen SeachOpgaver
+
+ Metoderne er lagt i den rækkefølge, som skulle indebære stigende sværhedsgrad.
+
+ God fornøjelse med opgaverne
+ Bjørk Boye Busch
