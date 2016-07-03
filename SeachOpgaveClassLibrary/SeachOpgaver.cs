@@ -76,8 +76,28 @@ namespace SeachOpgaveClassLibrary
 
             // programmer metoden, idet du her skal bruge binær søgning (loop - ikke recursion)
 
-            return -2; //  throw new NotImplementedException();
+            // https://en.wikipedia.org/wiki/Binary_search_algorithm#Algorithm
 
+            if (IntList == null)
+                return -1;
+
+            int left = 0;
+            int middle;
+            int right = IntList.Count - 1;
+
+            while (left <= right)
+            {
+                middle = (left + right) / 2;
+
+                if (IntList[middle] == seachValue)
+                    return middle;
+                else if (IntList[middle] < seachValue)
+                    left = middle + 1;
+                else if (IntList[middle] > seachValue)
+                    right = middle - 1;
+            }
+
+            return -1;
         }
 
         public int FindPositionInList_Sorted_Binary_RecursiveStart(int seachValue)
