@@ -103,6 +103,7 @@ namespace SeachOpgaveClassLibrary
         public int FindPositionInList_Sorted_Binary_RecursiveStart(int seachValue)
         {
             // Hjælpemetode for opstart så man ikke skal kende listen uden for klassen - Kunne hedde det samme som den recursive, da der er forskellige paramertere
+
             return FindPositionInList_Sorted_Binary_Recursive(0,IntList.Count,seachValue);
         }
         public int FindPositionInList_Sorted_Binary_Recursive(int firstPosition, int lastPosition, int seachValue)
@@ -117,10 +118,26 @@ namespace SeachOpgaveClassLibrary
 
             // programmer metoden, idet du her skal bruge binær søgning og en recursiv løsning
 
-            return -2; //  throw new NotImplementedException();
+            if (IntList == null || IntList.Count == 0)
+                return -1;
 
+            int left = firstPosition;
+            int middle;
+            int right = lastPosition;
+
+            while (left <= right)
+            {
+                middle = (left + right) / 2;
+
+                if (IntList[middle] == seachValue)
+                    return middle;
+                else if (IntList[middle] < seachValue)
+                    left = middle + 1;
+                else if (IntList[middle] > seachValue)
+                    right = middle - 1;
+            }
+
+            return -1;
         }
-
-
     }
 }
